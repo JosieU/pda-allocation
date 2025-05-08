@@ -83,7 +83,7 @@ if os.path.exists(DB_PATH):
                     else:
                         found = True
                         st.subheader(f"📋 Allocations for {date}")
-                        st.dataframe(date_df, use_container_width=True)
+                        st.dataframe(date_df.reset_index(drop=True), use_container_width=True)
 
                 if not found:
                     st.warning("⚠️ No data matched the selected date(s).")
